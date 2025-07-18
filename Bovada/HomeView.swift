@@ -20,7 +20,7 @@ struct HomeView: View {
                     .foregroundStyle(.grayMain)
                     .font(.system(size: 14))
                     .padding(.bottom)
-                HStack {
+                HStack (spacing: 15) {
                     NavigationLink {
                         EditMatchView()
                     } label: {
@@ -78,7 +78,7 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                         Spacer()
                     }
-                    HStack {
+                    HStack (spacing: 15) {
                         VStack {
                             Text("\(userService.matches.count)")
                                 .font(.system(size: 24))

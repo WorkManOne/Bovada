@@ -24,7 +24,7 @@ struct MatchPreView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .background(
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 20)
                             .fill(match.isWin ? .green : .red)
                     )
             }
@@ -51,10 +51,10 @@ struct MatchPreView: View {
                     ForEach (match.sets, id: \.id) { set in
                         Text("\(set.score1):\(set.score2)")
                             .foregroundStyle(.white)
-                            .font(.system(size: 20))
-                            .minimumScaleFactor(0.2)
+                            .font(.system(size: set.id == match.sets.first?.id ? 20 : 14))
                     }
                 }
+                .padding(.top)
                 Spacer()
                 VStack {
                     ZStack {
@@ -93,7 +93,7 @@ struct MatchPreView: View {
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 8)
                                 .fill(.redMain)
                         )
                 }

@@ -12,7 +12,7 @@ struct UmpireView: View {
     @ObservedObject var matchState: MatchState = MatchState()
     @Environment(\.dismiss) var dismiss
 
-    @State private var timerSeconds = 75
+    @State private var timerSeconds = 90
     @State private var timerRunning = false
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -65,7 +65,7 @@ struct UmpireView: View {
                 }
                 .darkFramed()
                 .padding(.top, 15)
-                HStack {
+                HStack (spacing: 15) {
                     Button {
                         matchState.player1Scored()
                     } label: {
@@ -110,23 +110,23 @@ struct UmpireView: View {
                     ZStack {
                         Circle()
                             .fill(.backgroundMain)
-                            .frame(width: 80, height: 80)
+                            .frame(width: 60, height: 60)
                         Circle()
-                            .trim(from: 1 - CGFloat(timerSeconds) / 75.0, to: 1)
+                            .trim(from: 1 - CGFloat(timerSeconds) / 90.0, to: 1)
                             .stroke(
                                 timerRunning ? Color.redMain : Color.grayMain,
-                                style: StrokeStyle(lineWidth: 3, lineCap: .round)
+                                style: StrokeStyle(lineWidth: 2, lineCap: .round)
                             )
                             .rotationEffect(.degrees(-90))
                             .animation(.linear(duration: 1), value: timerSeconds)
-                            .frame(width: 80, height: 80)
+                            .frame(width: 60, height: 60)
                         Text("\(timerSeconds)")
-                            .font(.system(size: 20, weight: .bold))
+                            .font(.system(size: 20))
                             .foregroundStyle(.white)
                     }
                     Button {
                         timerRunning = true
-                        timerSeconds = 75
+                        timerSeconds = 90
                     } label: {
                         HStack {
                             Image(systemName: "play.fill")
@@ -145,7 +145,7 @@ struct UmpireView: View {
                     }
                 }
                 .darkFramed()
-                HStack {
+                HStack (spacing: 15) {
                     Button {
                         withAnimation {
                             matchState.togglePause()
@@ -171,6 +171,7 @@ struct UmpireView: View {
                                 .font(.system(size: 16))
                                 .foregroundStyle(.white)
                         }
+                        .padding(.vertical, 5)
                         .darkFramed()
                     }
                     Button {
@@ -189,6 +190,7 @@ struct UmpireView: View {
                                 .font(.system(size: 16))
                                 .foregroundStyle(.white)
                         }
+                        .padding(.vertical, 5)
                         .colorFramed(color: .redMain)
                     }
                 }

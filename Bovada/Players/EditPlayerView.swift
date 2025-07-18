@@ -41,13 +41,15 @@ struct EditPlayerView: View {
                         .font(.system(size: 20))
                         .foregroundStyle(.white)
                 }
-                Text("Name / Nickname *")
+                .padding(.bottom, 30)
+                Text("Name / Nickname")
                     .font(.system(size: 14))
                     .foregroundStyle(.grayMain)
                 TextField("", text: $player.name, prompt: Text("Enter player name").foregroundColor(.grayMain))
                     .foregroundStyle(.white)
                     .font(.system(size: 16))
                     .darkFramed()
+                    .padding(.bottom)
                 Text("Photo (optional)")
                     .font(.system(size: 14))
                     .foregroundStyle(.grayMain)
@@ -79,6 +81,7 @@ struct EditPlayerView: View {
                     .frame(width: 150)
                     Spacer()
                 }
+                .padding(.bottom)
                 Text("Contact Info (optional)")
                     .font(.system(size: 14))
                     .foregroundStyle(.grayMain)
@@ -105,6 +108,7 @@ struct EditPlayerView: View {
                         .frame(minHeight: 100)
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Text("Weaknesses")
                     .font(.system(size: 14))
                     .foregroundStyle(.grayMain)
@@ -123,6 +127,7 @@ struct EditPlayerView: View {
                         .frame(minHeight: 100)
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Text("Suggested Tactics")
                     .font(.system(size: 14))
                     .foregroundStyle(.grayMain)
@@ -141,6 +146,7 @@ struct EditPlayerView: View {
                         .frame(minHeight: 100)
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Button {
                     if isEditing {
                         if let index = userService.players.firstIndex(where: { $0.id == player.id }) {

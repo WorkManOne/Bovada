@@ -22,7 +22,7 @@ struct CourtsView: View {
                         .foregroundStyle(.grayMain)
                         .font(.system(size: 14))
                         .padding(.bottom, 30)
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: 15) {
                         Text("Your courts")
                             .font(.system(size: 18))
                             .foregroundStyle(.white)

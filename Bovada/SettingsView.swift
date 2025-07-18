@@ -54,6 +54,7 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Text("Notifications")
                     .foregroundStyle(.white)
                     .font(.system(size: 18))

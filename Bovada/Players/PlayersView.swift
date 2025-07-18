@@ -22,7 +22,7 @@ struct PlayersView: View {
                         .foregroundStyle(.grayMain)
                         .font(.system(size: 14))
                         .padding(.bottom, 30)
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: 20) {
                         ForEach(userService.players) { player in
                             PlayerPreView(player: player)
                         }

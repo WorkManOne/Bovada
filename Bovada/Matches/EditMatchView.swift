@@ -43,6 +43,7 @@ struct EditMatchView: View {
                         .font(.system(size: 20))
                         .foregroundStyle(.white)
                 }
+                .padding(.bottom, 30)
                 Text("Opponent")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
@@ -81,6 +82,7 @@ struct EditMatchView: View {
                         .font(.system(size: 14))
                         .foregroundStyle(.redMain)
                 }
+                .padding(.bottom)
                 HStack {
                     VStack (alignment: .leading) {
                         Text("Date")
@@ -132,12 +134,13 @@ struct EditMatchView: View {
                         }
                     }
                 }
+                .padding(.bottom)
                 Text("Final Score")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                 ForEach (Array(match.sets.enumerated()), id: \.element.id) { index, opponent in
                     HStack {
-                        Text("Set \(index)")
+                        Text("Set \(index+1)")
                             .font(.system(size: 14))
                             .foregroundStyle(.grayMain)
                         TextField("", text: Binding(
@@ -188,6 +191,7 @@ struct EditMatchView: View {
                             .foregroundStyle(.redMain)
                     }
                 }
+                .padding(.bottom)
                 Text("Match Outcome")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
@@ -229,6 +233,7 @@ struct EditMatchView: View {
                         .darkFramed(isBordered: !match.isWin)
                     }
                 }
+                .padding(.bottom)
                 Text("General Notes")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
@@ -247,6 +252,7 @@ struct EditMatchView: View {
                         .frame(minHeight: 70)
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Button {
                     if isEditing {
                         if let index = userService.matches.firstIndex(where: { $0.id == match.id }) {

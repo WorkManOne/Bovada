@@ -46,6 +46,7 @@ struct EditCourtView: View {
                         .font(.system(size: 20))
                         .foregroundStyle(.white)
                 }
+                .padding(.bottom, 30)
                 Text("Court Name")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
@@ -53,6 +54,7 @@ struct EditCourtView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 16))
                     .darkFramed()
+                    .padding(.bottom)
                 Text("Location")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundStyle(.white)
@@ -60,6 +62,7 @@ struct EditCourtView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 16))
                     .darkFramed()
+                    .padding(.bottom)
                 Text("Court Type")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundStyle(.white)
@@ -76,7 +79,7 @@ struct EditCourtView: View {
                         .frame(maxWidth: .infinity)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
-                .padding(.bottom, 20)
+                .padding(.bottom)
                 Text("Court Setting")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
@@ -89,10 +92,10 @@ struct EditCourtView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                .padding(.bottom)
                 Text("Upload Photos (optional, max 3)")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundStyle(.white)
-                    .padding(.top)
                 HStack {
                     Button {
                         showSourceSheet = true
@@ -174,7 +177,7 @@ struct EditCourtView: View {
                 Text("Rate This Court")
                     .font(.system(size: 18))
                     .foregroundStyle(.white)
-                HStack {
+                HStack (spacing: 0) {
                     Text("Booking Convenience")
                         .font(.system(size: 14))
                         .foregroundStyle(.white)
@@ -186,7 +189,7 @@ struct EditCourtView: View {
                     }
                 }
                 CustomSlider(value: $court.convenience)
-                HStack {
+                HStack (spacing: 0) {
                     Text("Surface Condition")
                         .font(.system(size: 14))
                         .foregroundStyle(.white)
@@ -198,7 +201,7 @@ struct EditCourtView: View {
                     }
                 }
                 CustomSlider(value: $court.condition)
-                HStack {
+                HStack (spacing: 0) {
                     Text("Lighting")
                         .font(.system(size: 14))
                         .foregroundStyle(.white)
@@ -210,7 +213,7 @@ struct EditCourtView: View {
                     }
                 }
                 CustomSlider(value: $court.lighting)
-                HStack {
+                HStack (spacing: 0) {
                     Text("Amenities")
                         .font(.system(size: 14))
                         .foregroundStyle(.white)
@@ -240,6 +243,7 @@ struct EditCourtView: View {
                         .frame(minHeight: 100)
                 }
                 .darkFramed()
+                .padding(.bottom)
                 Button {
                     if isEditing {
                         if let index = userService.courts.firstIndex(where: { $0.id == court.id }) {

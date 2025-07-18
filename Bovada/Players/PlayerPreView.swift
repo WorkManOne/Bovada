@@ -72,10 +72,10 @@ struct PlayerPreView: View {
                         Text("Details")
                             .foregroundStyle(.white)
                             .font(.system(size: 14))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 8)
                             .background(
-                                RoundedRectangle(cornerRadius: 10)
+                                RoundedRectangle(cornerRadius: 8)
                                     .fill(.redMain)
                             )
                     }
